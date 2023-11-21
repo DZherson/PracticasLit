@@ -36,6 +36,3 @@ st.dataframe(dfMes)
 
 
 
-fig_comparativo = px.bar(dfComparativo, x='fechaEntrada', y='horaEntrada', color='Year', labels={'fechaEntrada': 'Día', 'horaEntrada': 'Número de clientes'}, text='horaEntrada', title=f'Comparación entre 2018 y 2019 en {mesSeleccionado}')
-st.plotly_chart(fig_comparativo, use_container_width=True)
-
