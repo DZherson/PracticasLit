@@ -35,8 +35,6 @@ st.title("Tabla del mes")
 st.dataframe(dfMes)
 
 
-dfComparativo = dfCafe[(dfCafe['fechaEntrada'].dt.month_name() == mesSeleccionado) & (dfCafe['fechaEntrada'].dt.year.isin([2018, 2019]))]
-dfComparativo['Year'] = dfComparativo['fechaEntrada'].dt.year  # Create a new column for the year
 
 fig_comparativo = px.bar(dfComparativo, x='fechaEntrada', y='horaEntrada', color='Year', labels={'fechaEntrada': 'Día', 'horaEntrada': 'Número de clientes'}, text='horaEntrada', title=f'Comparación entre 2018 y 2019 en {mesSeleccionado}')
 st.plotly_chart(fig_comparativo, use_container_width=True)
